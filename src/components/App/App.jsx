@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css';
 
 import FeelingForm from '../FeelingForm/FeelingForm';
+import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 
 function App() {
   return (
@@ -13,9 +14,15 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Router>
+
           <Route exact path='/'>
             <FeelingForm />
           </Route>
+
+          <Route path="/understanding">
+            <UnderstandingForm />
+          </Route>
+
         </Router>
     </div>
   );

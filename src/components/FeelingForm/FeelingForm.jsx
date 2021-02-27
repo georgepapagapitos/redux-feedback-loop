@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import './FeelingForm.css';
 
 function FeelingForm() {
 
@@ -11,10 +10,9 @@ function FeelingForm() {
 
   const sendFeeling = (event) => {
     console.log('feeling', feeling);
-    console.log('event', event);
     if(feeling === '') {
       event.preventDefault();
-      alert('please select a number');
+      alert('Please select a number!');
     } else {
       dispatch({
         type: 'SET_FEELING',
@@ -22,10 +20,6 @@ function FeelingForm() {
       })
     }
   }
-
-  const handleChange = (event) => {
-    setFeeling(event.target.value);
-  };
 
   return (
     <div className="container">
