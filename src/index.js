@@ -8,7 +8,6 @@ import logger from 'redux-logger';
 import registerServiceWorker from './registerServiceWorker';
 
 const feedbackReducer = (state = {}, action) => {
-  console.log('state', state);
   if(action.type === "SET_FEELING") {
     return {
       ...state,
