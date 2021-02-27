@@ -8,17 +8,12 @@ function UnderstandingForm() {
 
   const [understanding, setUnderstanding] = useState('1');
 
-  const sendUnderstanding = (event) => {
+  const sendUnderstanding = () => {
     console.log('understanding', understanding);
-    if(understanding === '') {
-      event.preventDefault();
-      alert('Please select a number!');
-    } else {
-      dispatch({
-        type: 'SET_UNDERSTANDING',
-        payload: {understanding}
-      })
-    }
+    dispatch({
+      type: 'SET_UNDERSTANDING',
+      payload: {understanding}
+    })
   }
 
   return (

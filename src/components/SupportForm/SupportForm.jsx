@@ -8,17 +8,12 @@ function SupportForm() {
 
   const [support, setSupport] = useState('1');
 
-  const sendSupport = (event) => {
+  const sendSupport = () => {
     console.log('support', support);
-    if(support === '') {
-      event.preventDefault();
-      alert('Please select a number!');
-    } else {
-      dispatch({
-        type: 'SET_SUPPORT',
-        payload: {support}
-      })
-    }
+    dispatch({
+      type: 'SET_SUPPORT',
+      payload: {support}
+    })
   }
 
   return (

@@ -10,17 +10,12 @@ function FeelingForm() {
 
   const [feeling, setFeeling] = useState('1')
 
-  const sendFeeling = (event) => {
+  const sendFeeling = () => {
     console.log('feeling', feeling);
-    if(feeling === '') {
-      event.preventDefault();
-      alert('Please select a number!');
-    } else {
-      dispatch({
-        type: 'SET_FEELING',
-        payload: {feeling}
-      })
-    }
+    dispatch({
+      type: 'SET_FEELING',
+      payload: {feeling}
+    })
   }
 
   return (
