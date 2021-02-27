@@ -25,9 +25,9 @@ function UnderstandingForm() {
     <div className="container">
       <h1>How well are you understanding the content?</h1>
       <div>
-      <form onChange={event => setUnderstanding(event.target.value)}>
+      <form>
         <p>Understanding?</p>
-        <input type="number" min="1" max="5"></input>
+        <input onChange={event => setUnderstanding(event.target.value)} type="number" min="1" max="5"></input>
       </form>
       <Link to="/support" onClick={sendUnderstanding}>
         <button className="btn-next">NEXT</button>

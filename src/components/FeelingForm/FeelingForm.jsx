@@ -25,9 +25,9 @@ function FeelingForm() {
     <div className="container">
       <h1>How are you feeling today?</h1>
       <div>
-      <form onChange={event => setFeeling(event.target.value)}>
+      <form>
         <p>Feeling?</p>
-        <input type="number" min="1" max="5"></input>
+        <input onChange={event => setFeeling(event.target.value)} type="number" min="1" max="5"></input>
       </form>
       <Link to="/understanding" onClick={sendFeeling}>
         <button className="btn-next">NEXT</button>
