@@ -13,6 +13,11 @@ const feedbackReducer = (state = {}, action) => {
       ...state,
       ...action.payload
     }
+  } else if(action.type === "SET_UNDERSTANDING") {
+    return {
+      ...state,
+      ...action.payload
+    }
   }
   return state;
 }
