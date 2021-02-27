@@ -23,13 +23,12 @@ const feedbackReducer = (state = {}, action) => {
       ...state,
       ...action.payload
     }
-  } else if(action.type === "SET_COMMENT") {
+  } else if(action.type === "SET_COMMENTS") {
     return {
       ...state,
       ...action.payload
     }
   }
-  
   return state;
 }
 

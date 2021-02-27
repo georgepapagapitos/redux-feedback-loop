@@ -6,27 +6,26 @@ function CommentForm() {
 
   const dispatch = useDispatch();
 
-  const [comment, setComment] = useState('');
+  const [comments, setComments] = useState('');
 
-  const sendComment = (event) => {
-    console.log('comment', comment);
+  const sendComments = (event) => {
+    console.log('comments', comments);
     dispatch({
-      type: 'SET_COMMENT',
-      payload: {comment}
+      type: 'SET_COMMENTS',
+      payload: {comments}
     })
-    
   }
 
   return (
     <div className="container">
       <h1>Any comments you want to leave?</h1>
       <div>
-      <form onChange={event => setComment(event.target.value)}>
+      <form>
         <label>Comments
-          <input type="text"></input>
+          <input onChange={event => setComments(event.target.value)} type="text"></input>
         </label>
       </form>
-      <Link to="/review" onClick={sendComment}>
+      <Link to="/review" onClick={sendComments}>
         <button className="btn-next">NEXT</button>
       </Link>
       </div>

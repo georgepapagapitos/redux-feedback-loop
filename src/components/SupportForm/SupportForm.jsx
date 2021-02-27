@@ -25,9 +25,9 @@ function SupportForm() {
     <div className="container">
       <h1>How well are you being supported?</h1>
       <div>
-      <form onChange={event => setSupport(event.target.value)}>
+      <form>
         <p>Support?</p>
-        <input type="number" min="1" max="5"></input>
+        <input onChange={event => setSupport(event.target.value)} type="number" min="1" max="5"></input>
       </form>
       <Link to="/comment" onClick={sendSupport}>
         <button className="btn-next">NEXT</button>
