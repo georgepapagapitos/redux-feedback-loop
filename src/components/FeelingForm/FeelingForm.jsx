@@ -23,14 +23,14 @@ function FeelingForm() {
       <h1>How are you feeling today?</h1>
       <div className="dropdown">
         <label>Feeling?
-          <select onChange={event => setFeeling(event.target.value)}>
+          <select name="feeling" onChange={event => setFeeling(event.target.value)}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
-        </label>  
+        </label>
       </div>
       <Link to="/understanding" onClick={sendFeeling}>
         <button className="btn-next">NEXT</button>
