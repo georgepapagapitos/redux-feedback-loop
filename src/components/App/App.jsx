@@ -13,7 +13,7 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Router>
-          <Route path='/feeling'>
+          <Route exact path='/'>
             <FeelingForm />
           </Route>
         </Router>
