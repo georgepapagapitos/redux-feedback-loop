@@ -5,7 +5,11 @@ input[type=number] {
   border-bottom: 1px solid #ccc;
 }
 
-input[type=number]:active {
-  
+input[type=number]:focus {
+  outline: none;
   border-bottom: 2px solid darkblue;
+}
+
+.btn-next {
+  margin-left: 3rem;
 }
