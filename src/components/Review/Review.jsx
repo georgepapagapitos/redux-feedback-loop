@@ -5,26 +5,26 @@ import { useHistory } from 'react-router-dom';
 function Review() {
 
   const history = useHistory();
-
+  
   const feedback = useSelector(store => {
     return store.feedbackReducer;
   });
 
-  const submitFeedback = (event) => {
-    event.preventDefault();
+  const onSubmit = () => {
+    console.log('sending feedback to database', feedback);
     axios({
       method: 'POST',
       url: '/feedback',
       data: feedback
     })
     .then(response => {
-      console.log('feedback added', feedback);
+      alert('Feedback submitted!');
+      history.push('/');
     })
     .catch(err => {
       console.log(err);
     })
-
-    history.push('/');
+    
   }
 
   return (
@@ -36,7 +36,7 @@ function Review() {
         <li>Support: {feedback.support}</li>
         <li>Comments: {feedback.comments}</li>
       </ul>
-      <button onClick={submitFeedback} type="submit">Submit</button>
+      <button onClick={onSubmit} type="button">Submit</button>
       
     </>
   )
