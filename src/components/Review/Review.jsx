@@ -37,7 +37,6 @@ function Review() {
         <li>Comments: {feedback.comments}</li>
       </ul>
       <button onClick={onSubmit} type="button">Submit</button>
-      
     </>
   )
 }
