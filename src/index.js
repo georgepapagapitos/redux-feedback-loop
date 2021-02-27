@@ -18,6 +18,11 @@ const feedbackReducer = (state = {}, action) => {
       ...state,
       ...action.payload
     }
+  } else if(action.type === "SET_SUPPORT") {
+    return {
+      ...state,
+      ...action.payload
+    }
   }
   return state;
 }

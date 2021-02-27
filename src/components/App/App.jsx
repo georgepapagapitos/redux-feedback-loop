@@ -5,6 +5,7 @@ import './App.css';
 
 import FeelingForm from '../FeelingForm/FeelingForm';
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
+import SupportForm from '../SupportForm/SupportForm';
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
 
           <Route path="/understanding">
             <UnderstandingForm />
+          </Route>
+
+          <Route path="/support">
+            <SupportForm />
           </Route>
 
         </Router>
