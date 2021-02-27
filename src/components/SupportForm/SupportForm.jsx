@@ -6,7 +6,7 @@ function SupportForm() {
 
   const dispatch = useDispatch();
 
-  const [support, setSupport] = useState('');
+  const [support, setSupport] = useState('1');
 
   const sendSupport = (event) => {
     console.log('support', support);
@@ -24,15 +24,20 @@ function SupportForm() {
   return (
     <div className="container">
       <h1>How well are you being supported?</h1>
-      <div>
-      <form>
-        <p>Support?</p>
-        <input onChange={event => setSupport(event.target.value)} type="number" min="1" max="5"></input>
-      </form>
+      <div className="dropdown">
+        <label>Support?
+          <select onChange={event => setSupport(event.target.value)}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </label>  
+      </div>
       <Link to="/comment" onClick={sendSupport}>
         <button className="btn-next">NEXT</button>
       </Link>
-      </div>
     </div>
   )
 }

@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+import './FeelingForm.css';
+
 function FeelingForm() {
 
   const dispatch = useDispatch();
 
-  const [feeling, setFeeling] = useState('')
+  const [feeling, setFeeling] = useState('1')
 
   const sendFeeling = (event) => {
     console.log('feeling', feeling);
@@ -24,15 +26,20 @@ function FeelingForm() {
   return (
     <div className="container">
       <h1>How are you feeling today?</h1>
-      <div>
-      <form>
-        <p>Feeling?</p>
-        <input onChange={event => setFeeling(event.target.value)} type="number" min="1" max="5"></input>
-      </form>
+      <div className="dropdown">
+        <label>Feeling?
+          <select onChange={event => setFeeling(event.target.value)}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </label>  
+      </div>
       <Link to="/understanding" onClick={sendFeeling}>
         <button className="btn-next">NEXT</button>
-      </Link>
-      </div>
+      </Link> 
     </div>
   )
 }
