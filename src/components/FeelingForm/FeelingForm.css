@@ -1,0 +1,11 @@
+input[type=number] {
+  width: 25%;
+  padding: 12px;
+  border-style: none;
+  border-bottom: 1px solid #ccc;
+}
+
+input[type=number]:active {
+  
+  border-bottom: 2px solid darkblue;
+}
