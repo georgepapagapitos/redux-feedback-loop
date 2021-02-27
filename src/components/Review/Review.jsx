@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -11,7 +12,18 @@ function Review() {
 
   const submitFeedback = (event) => {
     event.preventDefault();
-    console.log('submit');
+    axios({
+      method: 'POST',
+      url: '/feedback',
+      data: feedback
+    })
+    .then(response => {
+      console.log('feedback added', feedback);
+    })
+    .catch(err => {
+      console.log(err);
+    })
+
     history.push('/');
   }
 
@@ -24,7 +36,7 @@ function Review() {
         <li>Support: {feedback.support}</li>
         <li>Comments: {feedback.comments}</li>
       </ul>
-      <button onClick={submitFeedback} type="button">Submit</button>
+      <button onClick={submitFeedback} type="submit">Submit</button>
       
     </>
   )
