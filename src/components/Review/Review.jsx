@@ -1,8 +1,10 @@
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, Link } from 'react-router-dom';
 
 function Review() {
+
+  const dispatch = useDispatch()
 
   const history = useHistory();
   
@@ -19,6 +21,9 @@ function Review() {
     })
     .then(response => {
       alert('Feedback submitted!');
+      dispatch({
+        type: "CLEAR_FEEDBACK"
+      })
       history.push('/');
     })
     .catch(err => {
@@ -36,7 +41,9 @@ function Review() {
         <li>Support: {feedback.support}</li>
         <li>Comments: {feedback.comments}</li>
       </ul>
-      <Link to="/comment" className="btn back"><button>BACK</button></Link>
+      <Link to="/comment">
+        <button className="btn back">BACK</button>
+      </Link>
       <button onClick={onSubmit} type="button" className="btn submit">SUBMIT</button>
     </>
   )

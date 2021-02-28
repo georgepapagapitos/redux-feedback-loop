@@ -28,6 +28,8 @@ const feedbackReducer = (state = {}, action) => {
       ...state,
       ...action.payload
     }
+  } else if(action.type === "CLEAR_FEEDBACK") {
+    return {};
   }
   return state;
 }

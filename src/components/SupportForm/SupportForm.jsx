@@ -30,9 +30,11 @@ function SupportForm() {
           </select>
         </label>  
       </div>
-      <Link to='/understanding'><button>BACK</button></Link>
+      <Link to='/understanding'>
+        <button className="btn back">BACK</button>
+      </Link>
       <Link to="/comment" onClick={sendSupport}>
-        <button className="btn-next">NEXT</button>
+        <button className="btn next">NEXT</button>
       </Link>
     </div>
   )

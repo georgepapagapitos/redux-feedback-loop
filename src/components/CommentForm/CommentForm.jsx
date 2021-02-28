@@ -8,7 +8,7 @@ function CommentForm() {
 
   const [comments, setComments] = useState('');
 
-  const sendComments = (event) => {
+  const sendComments = () => {
     console.log('comments', comments);
     dispatch({
       type: 'SET_COMMENTS',
@@ -25,7 +25,9 @@ function CommentForm() {
           <input onChange={event => setComments(event.target.value)} type="text"></input>
         </label>
       </form>
-      <Link to="/support" className="btn back"><button>BACK</button></Link>
+      <Link to="/support">
+        <button className="btn back">BACK</button>
+      </Link>
       <Link to="/review" onClick={sendComments}>
         <button className="btn next">NEXT</button>
       </Link>

@@ -21,3 +21,15 @@
 h4 {
   font-style: italic;
 }
+
+.btn {
+  margin: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn-container {
+  display: block;
+}

@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import './FeelingForm.css';
-
 function FeelingForm() {
 
   const dispatch = useDispatch();
@@ -32,9 +30,11 @@ function FeelingForm() {
           </select>
         </label>
       </div>
+      <div className="btn-container">
       <Link to="/understanding" onClick={sendFeeling}>
         <button className="btn next">NEXT</button>
       </Link> 
+      </div>
     </div>
   )
 }
