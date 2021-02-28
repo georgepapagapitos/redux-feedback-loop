@@ -33,7 +33,7 @@ function FeelingForm() {
         </label>
       </div>
       <Link to="/understanding" onClick={sendFeeling}>
-        <button className="btn-next">NEXT</button>
+        <button className="btn next">NEXT</button>
       </Link> 
     </div>
   )

@@ -30,6 +30,7 @@ function UnderstandingForm() {
           </select>
         </label>  
       </div>
+      <Link to="/"><button>BACK</button></Link>
       <Link to="/support" onClick={sendUnderstanding}>
         <button className="btn-next">NEXT</button>
       </Link>      
