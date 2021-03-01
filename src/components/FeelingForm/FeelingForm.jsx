@@ -6,8 +6,11 @@ function FeelingForm() {
 
   const dispatch = useDispatch();
 
+  // Declare local state of feeling
   const [feeling, setFeeling] = useState('1')
 
+  // Function that dispatches selected feeling
+  // to the feedbackReducer
   const sendFeeling = () => {
     console.log('feeling', feeling);
     dispatch({

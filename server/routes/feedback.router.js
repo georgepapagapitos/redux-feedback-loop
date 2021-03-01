@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
+
+// POST route
 router.post('/', (req, res) => {
   console.log('in POST', req.body);
   const queryText = ` INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES($1, $2, $3, $4); `;
@@ -16,6 +18,6 @@ router.post('/', (req, res) => {
     console.log('error', error)
     
   });
-});
+}); // end POST
 
 module.exports = router;

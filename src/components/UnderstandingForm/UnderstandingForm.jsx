@@ -6,8 +6,11 @@ function UnderstandingForm() {
 
   const dispatch = useDispatch();
 
+  // Declare local understanding state
   const [understanding, setUnderstanding] = useState('1');
 
+  // Function that dispatches understanding selection
+  // to the feedbackReducer
   const sendUnderstanding = () => {
     console.log('understanding', understanding);
     dispatch({

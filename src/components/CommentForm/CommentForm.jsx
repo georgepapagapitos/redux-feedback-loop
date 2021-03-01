@@ -6,15 +6,18 @@ function CommentForm() {
 
   const dispatch = useDispatch();
 
+  // Declare local state of comment
   const [comments, setComments] = useState('');
 
+  // Function that dispatches the comment to
+  // the feedback reducer
   const sendComments = () => {
     console.log('comments', comments);
     dispatch({
       type: 'SET_COMMENTS',
       payload: {comments}
     })
-  }
+  };
 
   return (
     <div className="container">

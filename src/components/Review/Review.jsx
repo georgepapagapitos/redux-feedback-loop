@@ -8,10 +8,22 @@ function Review() {
 
   const history = useHistory();
   
+  // Grab the feedback object via the feedback reducer
   const feedback = useSelector(store => {
     return store.feedbackReducer;
   });
 
+  /*
+    feedback = {
+      feeling: 3,
+      understanding: 3,
+      support: 3,
+      comments: ...
+    }
+  */
+
+  // Function that POSTS the feedback object to
+  // the database
   const onSubmit = () => {
     console.log('sending feedback to database', feedback);
     axios({
@@ -19,6 +31,9 @@ function Review() {
       url: '/feedback',
       data: feedback
     })
+    // On a successful POST, alert the user
+    // Reset the feedbackReducer to an empty object
+    // Send the user back to the home page ('FeelingForm')
     .then(response => {
       alert('Feedback submitted!');
       dispatch({
@@ -27,7 +42,7 @@ function Review() {
       history.push('/');
     })
     .catch(err => {
-      console.log(err);
+      console.log('error posting feedback', err);
     })
     
   }
@@ -36,6 +51,7 @@ function Review() {
     <>
       <h1>Review Your Feedback</h1>
       <ul>
+        {/* Display each property of the feedback object */}
         <li>Feelings: {feedback.feeling}</li>
         <li>Understanding: {feedback.understanding}</li>
         <li>Support: {feedback.support}</li>

@@ -6,8 +6,11 @@ function SupportForm() {
 
   const dispatch = useDispatch();
 
+  // Declare local support state
   const [support, setSupport] = useState('1');
 
+  // Function that dispatches support selection
+  // to the feedbackReducer
   const sendSupport = () => {
     console.log('support', support);
     dispatch({
