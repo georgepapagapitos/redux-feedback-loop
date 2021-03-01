@@ -42,6 +42,7 @@ const feedbackReducer = (state = {}, action) => {
 }
 
 // Create the store for the provider
+// and pass in the feedbackReducer
 const store = createStore(
   combineReducers({
     feedbackReducer
