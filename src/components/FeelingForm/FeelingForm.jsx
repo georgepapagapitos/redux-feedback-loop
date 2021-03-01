@@ -7,6 +7,7 @@ function FeelingForm() {
   const dispatch = useDispatch();
 
   // Declare local state of feeling
+  // Set initial state to 1
   const [feeling, setFeeling] = useState('1')
 
   // Function that dispatches selected feeling

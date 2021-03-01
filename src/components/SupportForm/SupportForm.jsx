@@ -7,6 +7,7 @@ function SupportForm() {
   const dispatch = useDispatch();
 
   // Declare local support state
+  // Set initial state to 1
   const [support, setSupport] = useState('1');
 
   // Function that dispatches support selection

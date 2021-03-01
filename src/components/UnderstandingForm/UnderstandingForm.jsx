@@ -7,6 +7,7 @@ function UnderstandingForm() {
   const dispatch = useDispatch();
 
   // Declare local understanding state
+  // Set initial state to 1
   const [understanding, setUnderstanding] = useState('1');
 
   // Function that dispatches understanding selection
